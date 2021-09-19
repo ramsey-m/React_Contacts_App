@@ -11,7 +11,7 @@ export default function App() {
         name="Greg"
         img="https://i.ibb.co/qsB8nfg/greg.png"
         likes="01238 584 47 "
-        email="bigheadgreg@gmail.com"
+        email="greg@gmail.com"
       />
 
       <Card
