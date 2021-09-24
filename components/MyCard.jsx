@@ -1,9 +1,11 @@
 import React from "react";
 
-function MyCard() {
+function MyCard(props) {
   return (
     <div>
       <p>MyCard</p>
+      <p>{props.props.login}</p>
+      <img src={props.props.avatar_url} />
     </div>
   );
 }

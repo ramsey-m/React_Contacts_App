@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "../components/Home";
 import Friends from "../components/Friends";
@@ -6,32 +6,33 @@ import MyCard from "../components/MyCard";
 import Navbar from "./../components/Navbar";
 import axios from "axios";
 
-class App extends Component {
-  // useEffect
-  // get request with axios (axios.get)
-  // inside .get pass in the url (github)
-  // then use .then and inside .then put data.
-  // set data to new state.
-  // console log data.
-  // after .then have .catch to catch error
-  //then console log the error.
+function App() {
+  const [ramsey, setRamsey] = useState({});
 
-  render() {
-    return (
-      <Router>
-        <div>
-          <Navbar />
-          <hr />
+  useEffect(() => {
+    axios
+      .get("https://api.github.com/users/ramsey-m")
+      .then((data) => setRamsey(data.data))
+      .catch((err) => console.log(err));
+  }, []);
 
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/my-card" component={MyCard} />
-            <Route path="/friends" component={Friends} />
-          </Switch>
-        </div>
-      </Router>
-    );
-  }
+  //render() {
+  return (
+    <Router>
+      <div>
+        <Navbar />
+        <hr />
+
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/my-card">
+            <MyCard props={ramsey} />
+          </Route>
+          <Route path="/friends" component={Friends} />
+        </Switch>
+      </div>
+    </Router>
+  );
 }
 
 export default App;
