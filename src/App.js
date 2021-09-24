@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <h2>Cohort 12 Contact Info</h2>
+          <h2>Cohort 12 Contact Information</h2>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <ul className="navbar-nav mr-auto">
               <li>
