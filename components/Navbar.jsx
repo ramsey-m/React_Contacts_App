@@ -21,6 +21,11 @@ const Navbar = () => {
               Friends
             </Link>
           </li>
+          <li>
+            <Link to={"/brandon"} className="nav-link">
+              Brandon
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>

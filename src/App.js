@@ -5,6 +5,7 @@ import Friends from "../components/Friends";
 import MyCard from "../components/MyCard";
 import Navbar from "./../components/Navbar";
 import axios from "axios";
+import Brandon from "../components/brandon";
 
 function App() {
   const [ramsey, setRamsey] = useState({});
@@ -13,6 +14,15 @@ function App() {
     axios
       .get("https://api.github.com/users/ramsey-m")
       .then((data) => setRamsey(data.data))
+      .catch((err) => console.log(err));
+  }, []);
+
+  const [brandon, setbrandon] = useState({});
+
+  useEffect(() => {
+    axios
+      .get("https://api.github.com/users/BMac2124")
+      .then((data) => setbrandon(data.data))
       .catch((err) => console.log(err));
   }, []);
 
@@ -27,6 +37,9 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/my-card">
             <MyCard props={ramsey} />
+          </Route>
+          <Route path="/brandon">
+            <Brandon props={brandon} />
           </Route>
           <Route path="/friends" component={Friends} />
         </Switch>
