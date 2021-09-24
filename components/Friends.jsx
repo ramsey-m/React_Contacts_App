@@ -44,16 +44,17 @@ import Card from "./Card";
 
 class Friends extends Component {
   render() {
+    console.log(this.props);
     return (
       <div>
         <div>
-          <Card
+          {/* <Card
             name="Greg"
             img="https://i.ibb.co/qsB8nfg/greg.png"
             likes="01238 584 47 "
             email="greg@gmail.com"
-          />
-          {/* 
+          /> */}
+
           <Card
             name="Brandon"
             img="https://media-exp1.licdn.com/dms/image/C4E03AQH8y529Y07DHg/profile-displayphoto-shrink_100_100/0/1570230124945?e=1637193600&v=beta&t=XGAaKFIXVKIb13P709PNItkoixG9tbabllJtoHnC-uM"
@@ -74,7 +75,7 @@ class Friends extends Component {
             img="https://media-exp1.licdn.com/dms/image/C4E03AQGamSIsCSC6fg/profile-displayphoto-shrink_100_100/0/1627940573100?e=1637193600&v=beta&t=zlDBQ_Sjn-bEFhUWXzo3nj841Y8Vf9N7CwBHhduWiZI"
             likes="84773 37747"
             email="wuwu34@gmail.com"
-          /> */}
+          />
         </div>
         <h2>Friends</h2>
       </div>

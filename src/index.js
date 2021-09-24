@@ -11,6 +11,9 @@ import App from "./App";
 
 ReactDOM.render(<App />, document.getElementById("App"));
 
+// sources that helped me:
+// https://www.codingame.com/playgrounds/6517/react-router-tutorial
+
 // const rootElement = document.getElementById("root");
 // ReactDOM.render(
 //   <StrictMode>
